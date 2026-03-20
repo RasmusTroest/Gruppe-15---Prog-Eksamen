@@ -1,22 +1,32 @@
 let test = [1, 2, 3, 4, 5];
-
-let endpoint = "https://api.dataforsyningen.dk/adresser?q="
-
-let adresse = "Charlotte Muncks Vej 26, 4.th."
-
+let endpoint = "https://api.dataforsyningen.dk/adresser?q=";
+let btn = document.getElementById("submitButton");
+let inp = document.getElementById("textInput");
+let uList = document.getElementById("searchItems");
 
 function makeAPIfriendly(str) {
-    return encodeURIComponent(str)
+    let cleanstr = str.trim();
+    let adresse = encodeURIComponent(cleanstr);
+    let fullURI = endpoint + adresse;
+    return fullURI
+};
+
+async function getInfo(url) {
+    let result = await fetch(url);
+    let data = (await result.json())[0].adgangsadresse.ejerlav;
+
+    console.log(data);
+
+    return data
 }
 
-let URIAddress = makeAPIfriendly(adresse)
+async function searchAdress(str) {
+    let url = makeAPIfriendly(str);
+    let data = await getInfo(url);
 
-let fullURI = endpoint + URIAddress
+    let item = document.createElement("li");
+    item.innerHTML = `${data.navn}\n${data.kode}`
+    uList.appendChild(item);
+}
 
-console.log(fullURI)
-
-let result = await fetch(fullURI)
-
-let data = (await result.json())[0]
-
-console.log(data.adgangsadresse.vejpunkt)
+btn.addEventListener("click", () => searchAdress(inp.value));
