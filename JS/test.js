@@ -1,7 +1,7 @@
 let test = [1, 2, 3, 4, 5];
 let endpoint = "https://api.dataforsyningen.dk/adresser?q=";
 let btn = document.getElementById("submitButton");
-let inp = document.getElementById("textInput");
+let inp = document.getElementById("adresse");
 let uList = document.getElementById("searchItems");
 
 function makeAPIfriendly(str) {
@@ -13,7 +13,7 @@ function makeAPIfriendly(str) {
 
 async function getInfo(url) {
     let result = await fetch(url);
-    let data = (await result.json())[0].adgangsadresse.ejerlav;
+    let data = (await result.json())[0].adgangsadresse;
 
     console.log(data);
 
@@ -25,7 +25,7 @@ async function searchAdress(str) {
     let data = await getInfo(url);
 
     let item = document.createElement("li");
-    item.innerHTML = `${data.navn}\n${data.kode}`
+    item.innerHTML = `${data.ejerlav.kode}\n${data.matrikelnr}`
     uList.appendChild(item);
 }
 
