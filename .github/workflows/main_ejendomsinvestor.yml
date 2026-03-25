@@ -35,9 +35,9 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets['AZUREAPPSERVICE_CLIENTID_81B99E2F9B084519B4EE6C37FA57023B'] }}
-          tenant-id: ${{ secrets['AZUREAPPSERVICE_TENANTID_F571AA7906904CE2A4D60AE301D88528'] }}
-          subscription-id: ${{ secrets['AZUREAPPSERVICE_SUBSCRIPTIONID_81F3D10CE672449E9B81C8FC8C3A77A3'] }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_81B99E2F9B084519B4EE6C37FA57023B }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_F571AA7906904CE2A4D60AE301D88528 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_81F3D10CE672449E9B81C8FC8C3A77A3 }}
 
       - name: Deploy zipped app
         uses: azure/webapps-deploy@v3
