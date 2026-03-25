@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head'); %>
+</head>
+
+<body class="container">
+
+    <header>
+        <%- include('../partials/header'); %>
+    </header>
+
+    <main>
+        <div class="jumbotron">
+            <h1>About</h1>
+            <p>This site is a simple example of templating using EJS and Express.</p>
+        </div>
+
+        <!-- Extra content below the jumbotron, still styled consistently -->
+        <section class="content">
+            <h2>What is this project?</h2>
+            <p>
+                This project demonstrates how to build pages using reusable partial templates
+                (head, header, footer) and render content dynamically with EJS.
+            </p>
+
+            <h2>Why use EJS?</h2>
+            <ul>
+                <li><strong>Reusable layout:</strong> header/footer are shared across pages.</li>
+                <li><strong>Dynamic output:</strong> you can inject variables from Express.</li>
+                <li><strong>Cleaner code:</strong> avoid copy/pasting the same HTML.</li>
+            </ul>
+
+            <h2>Quick facts</h2>
+            <p>
+                Page rendered at: <strong>
+                    <%= new Date().toLocaleString() %>
+                </strong>
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <%- include('../partials/footer'); %>
+    </footer>
+
+</body>
+
+</html>
+``
