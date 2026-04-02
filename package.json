@@ -1,7 +1,7 @@
 {
   "scripts": {
-  "start": "node app.js"
-  }, 
+    "start": "node app.js"
+  },
   "dependencies": {
     "e": "^0.2.33",
     "ejs": "^5.0.1",
