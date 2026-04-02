@@ -1,20 +1,21 @@
-<h1 href="/">EjendomsInvestor</h1>
+<h1>EjendomsInvestor</h1>
 <div class="autocomplete-container">
     <input type="search" id="dawa-autocomplete-input">
 </div>
 <nav>
     <ul>
-        <li class="nav-item">
+        <li class="nav-item<%= currentPath === '/' ? ' active' : '' %>">
             <a href="/">Dashboard</a>
         </li>
-        <li class="nav-item">
-            <a href="/">Investeringscases</a>
+        <li class="nav-item<%= currentPath === '/investeringscases' ? ' active' : '' %>">
+            <a href="/investeringscases">Investeringscases</a>
         </li>
-        <li class="nav-item">
-            <a href="/">Sammenlign cases</a>
+        <li class="nav-item<%= currentPath === '/sammenlignCases' ? ' active' : '' %>">
+            <a href="/sammenlignCases">Sammenlign cases</a>
         </li>
-        <li class="nav-item">
-            <a href="/">Min bruger</a>
+        <li class="nav-item<%= currentPath === '/minBruger' ? ' active' : '' %>">
+            <a href="/minBruger">Min bruger</a>
         </li>
     </ul>
 </nav>
+<hr>

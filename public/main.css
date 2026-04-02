@@ -24,8 +24,8 @@ main {
     flex: 1;
 }
 
-footer {
-    margin: 1rem;
+nav{
+    width: 100%;
 }
 
 nav ul{
@@ -34,16 +34,39 @@ nav ul{
     list-style: none;
     justify-content: space-around;
     padding: 0;
+    margin: 0;
 }
 
-.nav-item {
-    margin-right: 1rem;
+.nav-item{
+    width: 100%;
     margin-left: 1rem;
+    margin-right: 1rem;
+    ;
+}
+
+
+.nav-item:hover,
+.active{
+    background-color: #363636;
+    color: rgb(196, 196, 196);
 }
 
 .nav-item a{
     font-size: larger;
-    color:#363636;
+    color:inherit;
     font-weight:bold;
     text-decoration: none;
+    display: block;
+    height: 3rem;
+    width: 100%;
+    align-content: center;
+    text-align: center;
+}
+
+hr{
+    height: 5px;
+    width: 100%;
+    background-color:#363636;
+    border:0;
+    margin: 0;
 }
