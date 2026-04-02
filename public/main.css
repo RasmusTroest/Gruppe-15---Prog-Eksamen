@@ -1,3 +1,9 @@
+:root{
+    --radius: 0.3rem;
+    --primary-color: #363636;
+    --secondary-color: rgb(196, 196, 196);
+}
+
 html, body{
     height: 100%;
     margin: 0;
@@ -7,8 +13,8 @@ body{
     font-family: Helvetica;
     font-weight: 500;
     font-size: 1rem;
-    color: #363636;
-    background-color: rgb(196, 196, 196);
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
     display: flex;
     flex-direction: column;
 }
@@ -20,6 +26,17 @@ header{
     align-items: center;
 }
 
+#headtitle{
+    margin: 0.2rem;
+    padding: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    color: var(--secondary-color);
+    background-color: var(--primary-color);
+    border-radius: var(--radius);
+    font-variant: small-caps;
+}
+
 main {
     flex: 1;
 }
@@ -27,6 +44,8 @@ main {
 nav{
     width: 100%;
 }
+
+
 
 nav ul{
     display: flex;
@@ -37,18 +56,19 @@ nav ul{
     margin: 0;
 }
 
-.nav-item{
+ul .nav-item{
     width: 100%;
     margin-left: 1rem;
     margin-right: 1rem;
-    ;
+    border-top-left-radius: var(--radius);
+    border-top-right-radius: var(--radius);
 }
 
 
 .nav-item:hover,
 .active{
-    background-color: #363636;
-    color: rgb(196, 196, 196);
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
 }
 
 .nav-item a{
@@ -66,7 +86,54 @@ nav ul{
 hr{
     height: 5px;
     width: 100%;
-    background-color:#363636;
+    background-color:var(--primary-color);
     border:0;
     margin: 0;
+}
+
+/*Log-in related*/
+.centerpage{
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+button a{
+    font-size: larger;
+    color:inherit;
+    font-weight:bold;
+    text-decoration: none;
+    display: block;
+    padding: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+form p{
+    font-weight: bold;
+    margin: 0;
+}
+
+form input{
+    width: 100%;
+    box-sizing: border-box;
+    font:inherit;
+    font-size: 1rem;
+    height: 2rem;
+}
+
+.login form{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 80%;
+}
+
+.login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
 }

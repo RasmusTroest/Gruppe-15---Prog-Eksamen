@@ -4,7 +4,8 @@
     width: 100%;
     max-width: 30em;
     height: 2rem;
-    margin: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
 .autocomplete-container input {

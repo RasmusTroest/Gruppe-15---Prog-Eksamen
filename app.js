@@ -21,11 +21,15 @@ app.use((req, res, next) => {
 
 // Routes
 app.get("/", (req, res) => {
-  res.render("pages/dashboard"); // looks for: ./views/pages/index.ejs
+  res.render("pages/login"); // looks for: ./views/pages/index.ejs
 });
 
 app.get("/about", (req, res) => {
   res.render("pages/about"); // looks for: ./views/pages/about.ejs
+});
+
+app.get("/dashboard", (req, res) => {
+  res.render("pages/dashboard"); // looks for: ./views/pages/dashboard.ejs
 });
 
 app.get("/investeringscases", (req, res) => {
